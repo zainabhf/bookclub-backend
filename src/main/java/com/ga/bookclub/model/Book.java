@@ -14,8 +14,10 @@ public class Book {
 	
 
 	@Column(length = 6)
-	 private int numberOfpages  ;
+	 private int numberOfpages ; 
+	
 	private String authorName;
+	
 	  private String  category ;
 	  
 	  
@@ -26,5 +28,9 @@ public class Book {
 	  private String image;
 	  private Date publish ;
 	  
+	  @OneToMany(mappedBy="book")
+		
+	  
 	 
 }
+
