@@ -26,6 +26,8 @@ public class User {
 	private String password;
 	private String image;
 	
+	private String userRole;
+	
 	 @OneToMany(mappedBy="user")
 	  private Set<Review> review_user;
 	
@@ -67,11 +69,12 @@ public class User {
 	public void setReview_user(Set<Review> review_user) {
 		this.review_user = review_user;
 	}
+	public String getUserRole() {
+		return userRole;
+	}
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
+	}
 	
 
-	
-	
-	
-	
-	
 }
