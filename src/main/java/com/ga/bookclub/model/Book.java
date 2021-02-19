@@ -28,7 +28,8 @@ public class Book {
 	  private String image;
 	  private Date publish ;
 	  
-	  @OneToMany(mappedBy="book")
+//	  @OneToMany(mappedBy="book")
+//	  private Set<Veiw> Veiwes;
 		
 	  
 	 
