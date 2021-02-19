@@ -3,6 +3,8 @@ package com.ga.bookclub.model;
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.util.Set;
 
 import javax.persistence.*;
@@ -19,10 +21,12 @@ public class Review {
 	private String reviewContent;
 
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "Fk_review_book")
 	private Book book;
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "Fk_review_user")
 	private User user;
 		
