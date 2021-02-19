@@ -13,7 +13,7 @@ public class Book {
 	@GeneratedValue
 	private int id;
 	
-
+private String BookName ;
 	@Column(length = 6)
 	 private int numberOfpages ; 
 	
@@ -94,6 +94,14 @@ public class Book {
 
 	public void setReview_book(Set<Review> review_book) {
 		this.review_book = review_book;
+	}
+
+	public String getBookName() {
+		return BookName;
+	}
+
+	public void setBookName(String bookName) {
+		BookName = bookName;
 	}
 
 
