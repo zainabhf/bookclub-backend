@@ -1,7 +1,10 @@
 package com.ga.bookclub.model;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import javax.persistence.GeneratedValue;
+
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,12 +15,16 @@ public class Review {
 	@GeneratedValue
 	private int id;
 	
-	@Column(length = 65535)
+	@Column(length = 1000)
 	private String reviewContent;
 
-	//FK of user
+	@ManyToOne
+	@JoinColumn(name = "Fk_review_book")
+	private Book book;
 	
-	//FK of book
+	@ManyToOne
+	@JoinColumn(name = "Fk_review_user")
+	private User user;
 		
 	public int getId() {
 		return id;
@@ -34,5 +41,22 @@ public class Review {
 	public void setReviewContent(String reviewContent) {
 		this.reviewContent = reviewContent;
 	}
-	
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
 }
