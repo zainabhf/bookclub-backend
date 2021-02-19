@@ -1,9 +1,12 @@
 package com.ga.bookclub.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +24,13 @@ public class User {
 	private String emailAddress; 
 	@Column(length = 50)
 	private String password;
+	private String image;
+	
+	 @OneToMany(mappedBy="user")
+	  private Set<Review> review_user;
+	
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -51,7 +61,13 @@ public class User {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	private String image;
+	public Set<Review> getReview_user() {
+		return review_user;
+	}
+	public void setReview_user(Set<Review> review_user) {
+		this.review_user = review_user;
+	}
+	
 
 	
 	
