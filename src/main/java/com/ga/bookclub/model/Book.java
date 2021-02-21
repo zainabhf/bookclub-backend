@@ -20,7 +20,7 @@ public class Book {
 	@GeneratedValue
 	private int id;
 	
-private String BookName ;
+private String bookName ;
 	@Column(length = 6)
 	 private int numberOfpages ; 
 	
@@ -105,12 +105,14 @@ private String BookName ;
 	}
 
 	public String getBookName() {
-		return BookName;
+		return bookName;
 	}
 
 	public void setBookName(String bookName) {
-		BookName = bookName;
+		this.bookName = bookName;
 	}
+
+
 
 
 
