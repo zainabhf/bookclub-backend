@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "user")
 public class User {
@@ -27,7 +29,7 @@ public class User {
 	private String image;
 	
 	private String userRole;
-	
+	@JsonBackReference
 	 @OneToMany(mappedBy="user")
 	  private Set<Review> review_user;
 	

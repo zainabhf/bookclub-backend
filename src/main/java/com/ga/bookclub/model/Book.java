@@ -5,15 +5,22 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+
 @Entity
 @Table(name="Book")
+
 public class Book {
 	
 	@Id
 	@GeneratedValue
 	private int id;
 	
-private String BookName ;
+private String bookName ;
 	@Column(length = 6)
 	 private int numberOfpages ; 
 	
@@ -28,7 +35,8 @@ private String BookName ;
 		@Column(length = 255)
 		  private String image;
 		  private Date publish ;
-		  
+		
+
 		  @OneToMany(mappedBy="book")
 		  private Set<Review> review_book;
 		  
@@ -97,12 +105,14 @@ private String BookName ;
 	}
 
 	public String getBookName() {
-		return BookName;
+		return bookName;
 	}
 
 	public void setBookName(String bookName) {
-		BookName = bookName;
+		this.bookName = bookName;
 	}
+
+
 
 
 
