@@ -36,7 +36,7 @@ private String bookName ;
 		  private String image;
 		  private Date publish ;
 		
-
+//		  @JsonBackReference
 		  @OneToMany(mappedBy="book")
 		  private Set<Review> review_book;
 		  

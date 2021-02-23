@@ -22,8 +22,8 @@ public class Review {
 
 	@ManyToOne
 	
+	
 	@JsonBackReference
-
 	@JoinColumn(name = "Fk_review_book")
 	private Book book;
 	
