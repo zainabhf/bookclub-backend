@@ -21,15 +21,11 @@ public class Review {
 	private String reviewContent;
 
 	@ManyToOne
-	
-	
 	@JsonBackReference
 	@JoinColumn(name = "Fk_review_book")
 	private Book book;
 	
 	@ManyToOne
-	
-
 	@JoinColumn(name = "Fk_review_user")
 	private User user;
 		

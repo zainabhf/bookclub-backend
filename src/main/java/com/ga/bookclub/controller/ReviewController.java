@@ -13,10 +13,10 @@ public class ReviewController {
 	private ReviewDao reviewDao;
 	
 	@PostMapping("review/add")
-	public Review addReview(@RequestBody Review review) {
+	public boolean addReview(@RequestBody Review review) {
 		reviewDao.save(review); 
-		
-		return review;
+		System.out.println(review.getReviewContent());
+		return true;
 	}
 	
 	@GetMapping("/review/index")
