@@ -42,8 +42,8 @@ public class BookController {
 	}
 	@PutMapping("/book/edit")
 	public Book editbook(@RequestBody Book book) {
-		bookDao.save(book);
-		return book;
+		var newBook=bookDao.save(book);
+		return newBook;
 	}
 	@DeleteMapping("/book/delete")
 	public boolean deleteAuthor(@RequestParam int id) {
